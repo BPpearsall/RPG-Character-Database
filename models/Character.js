@@ -15,23 +15,39 @@ Character.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        class: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        race: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        health: {
+        class_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            references: {
+                model: 'class',
+                key: 'id',
+            }
         },
-        attack: {
+        stats_id: {
             type: DataTypes.INTEGER,
-            allowNull: false
-        }
-    },
+            allowNull: false,
+            references: {
+                model: 'stats',
+                key: 'id',
+            }
+        },
+        comment_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'comment',
+                key: 'id',
+            },
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
+    },    
     {
         sequelize,
         freezeTableName: true,
