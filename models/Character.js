@@ -12,8 +12,12 @@ Character.init(
             autoIncrement: true,
         },
         name: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(30),
             allowNull: false,
+            validate: {
+                isAlpha: true,
+                len: [2,30]
+            }
         },
         class_id: {
             type: DataTypes.INTEGER,
