@@ -19,6 +19,42 @@ Character.init(
                 len: [2,30]
             }
         },
+        damage: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                min: 1,
+                max: 100,
+                isNumeric: true,
+                isDecimal: false,
+            },
+        },
+        health: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                min: 1,
+                max: 100,
+                isNumeric: true,
+                isDecimal: false,
+            },
+        },
+        background: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            validate: {
+                notEmpty: true,
+                len: [1, 300],
+            },
+        },
+        race: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true,
+                len: [1, 20],
+            },
+        },
         class_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -26,22 +62,6 @@ Character.init(
                 model: 'class',
                 key: 'id',
             }
-        },
-        stats_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'stats',
-                key: 'id',
-            }
-        },
-        comment_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'comment',
-                key: 'id',
-            },
         },
         user_id: {
             type: DataTypes.INTEGER,

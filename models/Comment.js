@@ -19,6 +19,14 @@ Comment.init(
                 len: [1, 300],
             },
         },
+        character_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'character',
+                key: 'id',
+            },
+        },
     },
     {
         sequelize,
