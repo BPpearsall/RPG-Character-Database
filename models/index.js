@@ -1,7 +1,6 @@
 const User = require('./User')
 const Character = require('./Character')
 const Class = require('./Class')
-const Stats = require('./Stats')
 const Comment = require('./Comment')
 
 User.hasMany(Character, {
@@ -23,11 +22,11 @@ Comment.belongsTo(User, {
 
 Class.hasMany(Character, {
     foreignKey: 'class_id'
-})
+});
 
 Character.belongsTo(Class, {
     foreignKey: 'class_id'
 });
 
 
-module.exports = {User, Character}
+module.exports = {User, Character, Comment, Class}
