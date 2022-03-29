@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Character } = require('../../models');
 
+// Get single character by specific id
 router.get('/:id', async (req, res) => {
     try {
         const characterData = await Character.findByPk({
@@ -29,6 +30,7 @@ router.post('/', async (req, res) => {
     }
 });
 
+// Delete single character by specific id
 router.delete('/:id', async (req, res) => {
     try {
         const characterData = await Character.destroy({
