@@ -18,6 +18,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+// Posts new character
 router.post('/', async (req, res) => {
     try {
         const newCharacter = await Character.create({
