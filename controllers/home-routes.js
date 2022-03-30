@@ -6,15 +6,13 @@ const withAuth = require('../utils/auth');
 // characters the include needs removed.
 // **works
 router.get('/', async (req, res) => {
-  try {
-    const characterDate = await Character.findAll({
-      include: [{ model: Comment }],
-    });
+  try { 
+    const characterData = await Character.findAll();
 
-    const character = characterDate.map((character) => character.get({ plain: true }));
+    const characters = characterData.map((character) => character.get({ plain: true}));
 
     res.render('homepage', {
-      character,
+      characters,
     });
 
   } catch (err) {

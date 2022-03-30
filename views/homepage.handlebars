@@ -1,1 +1,12 @@
-<h1>Home</h1>
+<div class="row m-4 justify-content-center">
+        {{#each characters as |character|}}
+    <div class="col-3 p-2 align-self-center">
+            <a href="/character/{{character.id}}" class="">
+            <div class="character card text-center">
+                <p class="card-title">{{character.name}}</p>
+                <p class="card-text">{{character.background}}</p>
+            </div>
+            </a>
+    </div>
+        {{/each}}
+</div>
