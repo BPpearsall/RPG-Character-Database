@@ -1,18 +1,18 @@
-const { Model, Datatypes } = require('sequelize');
-const sequilize = require('../config/connection');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Class extends Model {}
 
 Class.init(
     {
         id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
         },
         name: {
-            type: Datatypes.STRING(30),
+            type: DataTypes.STRING(30),
             allowNull: false,
             validate: {
                 isAlpha: true,
@@ -20,7 +20,7 @@ Class.init(
             }
         },
         alignment: {
-            type: Datatypes.STRING(30),
+            type: DataTypes.STRING(30),
             allowNull: false,
             validate: {
                 isAlpha: true,
@@ -31,6 +31,7 @@ Class.init(
     {
         sequelize,
         timestamps:false,
+        freezeTableName: true,
         underscored: true,
         modelName: 'class'
     }
