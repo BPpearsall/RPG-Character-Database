@@ -6,22 +6,18 @@ const withAuth = require('../utils/auth');
 // characters the include needs removed.
 router.get('/', async (req, res) => {
   try { 
-    const characterDate = await Character.findAll({
-      include: [ { model: Comment }],
+    const characterData = await Character.findAll();
+
+    const characters = characterData.map((character) => character.get({ plain: true}));
+
+    res.render('homepage', {
+      characters,
     });
-
-  const characters = characterDate.map((character) => character.get({ plain: true}));
-
-  res.render('homepage', {
-    characters,
-  });
 
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-
 
 // If the user is already logged in, redirect the request to another route
 router.get('/login', (req, res) => {
