@@ -15,6 +15,8 @@ const seedAll = async () => {
     console.log('\n----- CHARACTERS SEEDED -----\n');
     await seedComment();
     console.log('\n----- COMMENT SEEDED -----\n');
+
+    process.exit(0);
 }
 
 seedAll();
