@@ -28,5 +28,13 @@ Character.belongsTo(Class, {
     foreignKey: 'class_id'
 });
 
+Character.hasMany(Comment, {
+    foreignKey: 'character_id'
+});
+
+Comment.belongsTo(Character, {
+    foreignKey: 'character_id'
+}),
+
 
 module.exports = {User, Character, Comment, Class}
