@@ -12,7 +12,6 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', {
       characters,
-      logged_in:true
     });
 
   } catch (err) {
