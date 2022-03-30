@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // Find single comment by specific ID
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const commentData = await Comment.findByPk({
             where: {
@@ -19,7 +20,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Posts new comment
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newComment = await Comment.create({
             ...req.body,
@@ -33,7 +34,7 @@ router.post('/', async (req, res) => {
 });
 
 // Delete single comment by specific ID
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const commentData = await Comment.destroy({
             where: {

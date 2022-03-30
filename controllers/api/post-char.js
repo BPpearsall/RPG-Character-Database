@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Character } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // Get single character by specific id
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const characterData = await Character.findByPk({
             where: {
@@ -19,7 +20,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Posts new character
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newCharacter = await Character.create({
             ...req.body,
@@ -32,7 +33,7 @@ router.post('/', async (req, res) => {
 });
 
 // Delete single character by specific id
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const characterData = await Character.destroy({
             where: {
