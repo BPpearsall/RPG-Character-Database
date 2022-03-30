@@ -39,7 +39,7 @@ router.post('/login', async (req, res) => {
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
-    console.log(validPassword)
+
     if (!validPassword) {
       res
         .status(400)
@@ -50,17 +50,17 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
+      res.json({ user: userData, message: 'You are now logged in!' });
     });
-    
-    res.json({ user: userData, message: 'You are now logged in!' });
 
   } catch (err) {
-    console.log(err)
+
     res.status(400).json({error: err, message: 'something else is broken'});
   }
 });
 
 // logs out
+//**works
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

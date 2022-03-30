@@ -3,11 +3,12 @@ const { Character } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Get single character by specific id
+//** works
 router.get('/:id', withAuth, async (req, res) => {
     try {
-        const characterData = await Character.findByPk({
+        const characterData = await Character.findByPk(req.params.id, {
             where: {
-                id: req.params.id,
+                user_id: req.session.user_id,
             }})
         const character = characterData.get({ plain: true});
         res.render('character', {
@@ -20,12 +21,14 @@ router.get('/:id', withAuth, async (req, res) => {
 });
 
 // Posts new character
+//**works
 router.post('/', withAuth, async (req, res) => {
     try {
         const newCharacter = await Character.create({
             ...req.body,
             user_id: req.session.user_id,
         });
+        console.log(newCharacter)
         res.status(200).json(newCharacter);
     } catch (err) {
         res.status(400).json(err);
