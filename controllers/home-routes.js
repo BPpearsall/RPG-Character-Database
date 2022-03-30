@@ -22,14 +22,14 @@ router.get('/', async (req, res) => {
 });
 
 // If the user is already logged in, redirect the request to another route
-router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-      res.redirect('/homepage');
-      return;
-    }
+// router.get('/login', (req, res) => {
+//     if (req.session.logged_in) {
+//       res.redirect('/homepage');
+//       return;
+//     }
   
-    res.render('login');
-  });
+//     res.render('login');
+//   });
 
 // Find the logged in user based on the session ID
 //**handlebar profile page needs created
