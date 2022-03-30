@@ -15,7 +15,6 @@ Character.init(
             type: DataTypes.STRING(30),
             allowNull: false,
             validate: {
-                isAlpha: true,
                 len: [2,30]
             }
         },
