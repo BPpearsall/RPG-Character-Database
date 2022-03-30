@@ -19,4 +19,4 @@ Character.belongsTo(User, {
 
 
 
-module.exports = {User, Character}
+module.exports = {User, Character, Comment, Stats, Class}
