@@ -5,14 +5,15 @@ const withAuth = require('../utils/auth');
 // Renders homepage with "all" characters, including comments. If we want to just show
 // characters the include needs removed.
 router.get('/', async (req, res) => {
-  try { const characterDate = await Character.findAll({
-    include: [ { model: Comment }],
-  });
+  try { 
+    const characterDate = await Character.findAll({
+      include: [ { model: Comment }],
+    });
 
-  const character = characterDate.map((character) => character.get({ plain: true}));
+  const characters = characterDate.map((character) => character.get({ plain: true}));
 
   res.render('homepage', {
-    character,
+    characters,
   });
 
   } catch (err) {
