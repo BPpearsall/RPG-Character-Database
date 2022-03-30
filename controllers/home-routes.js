@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Character, Comment } = require('../models');
+const { User, Character, Comment, Class } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Renders homepage with "all" characters, including comments. If we want to just show
@@ -19,8 +19,6 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
 
 // If the user is already logged in, redirect the request to another route
 router.get('/login', (req, res) => {
@@ -52,5 +50,22 @@ router.get('/profile', withAuth, async (req, res) => {
     }
   });
 
+  // get a specific character by a PK.  includes the class and comments attached to the char.
+router.get('/character/:id', withAuth, async (req, res) => {
+  try {
+      const characterData = await Character.findByPk(req.session.id, {
+          include: [ { model: Class }, { model: Comment} ]
+      });
+
+      const character = characterData.get({ plain: true });
+
+      res.render('character', {
+          ...character,
+          logged_in: req.session.logged_in
+      });
+  } catch (err) {
+      res.status(400).json(err);
+  }
+});
 
 module.exports = router;

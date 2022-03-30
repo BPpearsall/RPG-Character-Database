@@ -2,22 +2,24 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// Find single comment by specific ID
-router.get('/:id', withAuth, async (req, res) => {
-    try {
-        const commentData = await Comment.findByPk({
-            where: {
-                id: req.params.id,
-            }})
-            const comment = commentData.get({ plain: true });
-            res.render('comment', {
-                comment,
-            })
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err)
-    }
-});
+// Find single comment by specific ID  **** Ask if they want to search by single comment.
+// router.get('/:id', withAuth, async (req, res) => {
+//     try {
+//         const commentData = await Comment.findByPk({
+//             where: {
+//                 id: req.params.id,
+//             }})
+//             const comment = commentData.get({ plain: true });
+//             res.render('comment', {
+//                 comment,
+//             })
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json(err)
+//     }
+// });
+
+// Put comment = ICEBOX
 
 // Posts new comment
 router.post('/', withAuth, async (req, res) => {
@@ -33,7 +35,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-// Delete single comment by specific ID
+// Delete single comment by specific ID ICEBOX
 router.delete('/:id', withAuth, async (req, res) => {
     try {
         const commentData = await Comment.destroy({
