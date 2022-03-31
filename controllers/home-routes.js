@@ -116,5 +116,28 @@ router.get('/character/:id', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+const race = {};
+    //Returns true false for handlebar images.
+    switch (character.race) {
+      case "Human":
+        race.isHuman = true;
+        break;
+      case "Orc":
+        race.isOrc = true;
+        break;
+      case "Dwarf":
+        race.isDwarf = true;
+        break;
+      case "Elf":
+        race.isElf = true;
+        break;
+      case "Gnome":
+        race.isGnome = true;
+        break;
+      case "Dragonborn":
+        race.isDragonborn = true;
+        break;
+      default:
+        console.log("invalid race")
+    }
 module.exports = router;
