@@ -9,13 +9,11 @@ router.get('/', async (req, res) => {
   try { 
     const characterData = await Character.findAll();
     const characters = characterData.map((character) => character.get({ plain: true}));
-    const user = await (await User.findByPk(req.session.user_id)).get({plain: true});
 
     res.render('homepage', {
       characters,
-      user
     });
-
+  
   } catch (err) {
     res.status(500).json(err);
   }
@@ -25,7 +23,7 @@ router.get('/', async (req, res) => {
 //**works
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
-      res.redirect('/homepage');
+      res.redirect('/');
       return;
     }
 
@@ -67,6 +65,7 @@ router.get('/character/:id', async (req, res) => {
       ...character,
       logged_in: req.session.logged_in
     });
+
   } catch (err) {
     res.status(400).json(err);
   }
