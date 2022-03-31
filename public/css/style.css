@@ -1,0 +1,79 @@
+/* Color Key
+#0B090A - Rich Black
+#161A1D - Eerie Black
+#660708 - Blood Red
+#A4161A - Ruby Red
+#BA181B - Carnelian
+#E5383B - Imperial Red
+#B1A7A6 - Black Shadows
+#D3D3D3 - Light Gray
+#F5F3F4 - Cultured
+#FFFFFF - White
+*/
+
+:root {
+    --rblack: #0b090a;
+    --eblack: #131a1d;
+    --bred: #660708;
+    --rred: #a4161a;
+    --carn: #ba181b;
+    --impred: #e5383b;
+    --shadows: #b1a7a6;
+    --gray: #d3d3d3;
+    --culture: #f5f3f4;
+    --white: #ffffff;
+}
+
+* {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar {
+    background-color: var(--rblack);
+    text-shadow: 1px 1px var(--bred);
+}
+
+.nav-link {
+    color:var(--impred);
+}
+
+.nav-link:hover {
+    color:var(--culture);
+}
+
+.dropdown-menu a {
+    background-color: var(--eblack);
+    color:var(--impred);
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--eblack);
+    color:var(--culture);
+}
+
+.card-title{
+    background-color: var(--bred);
+    color: var(--shadows);
+    text-shadow: 1px 1px var(--impred);
+    
+}
+
+.card-title:link{
+    text-decoration: none;
+}
+
+.card-title:hover{
+    background-color: var(--rred);
+    color: var(--gray);
+    text-shadow: 1px 1px var(--bred);
+    
+}
+
+.card-text{
+    background-color: var(--shadows);
+    color: var(--eblack);
+}
+
+a:link {
+    text-decoration: none;
+}
