@@ -1,3 +1,5 @@
+
+
 <div class="row">
     <div class="col-auto">
         <h2>{{name}}</h2>
@@ -39,13 +41,12 @@
       <div class="form-group">
           <label for="character-class">Character Class:</label>
           <select class="form-input" name="character-class" id="character-class">
-              <option value="barbarian">Barbarian</option>
-              <option value="ranger">Ranger</option>
-              <option value="fighter">Fighter</option>
-              <option value="paladin">Paladin</option>
-              <option value="rogue">Rogue</option>
-              <option value="wizard">Wizard</option>
-              <option value="warlock">Warlock</option>
+              <option value="1">Angel</option>
+              <option value="2">Warrior</option>
+              <option value="3">Archer</option>
+              <option value="4">Vampire Bunny</option>
+              <option value="5">Brute</option>
+              <option value="6">Alien Invader</option>
           </select>
       </div>
 
@@ -58,6 +59,38 @@
       </div>
     </form>
   </div>
+</div>
 
 
-<script src="../public/js/add-character.js"></script>
+<script>
+  const newFormHandler = async (event) => {
+  event.preventDefault();
+
+  const name = document.querySelector('#character-name').value.trim();
+  const damage = document.querySelector('#character-damage').value.trim();
+  const health = document.querySelector('#character-health').value.trim();
+  const background = document.querySelector('#character-background').value.trim();
+  const race = document.querySelector('#character-race').value.trim();
+  const class_id = document.querySelector('#character-class').value.trim();
+
+  if (name && damage && health && background && race && class_id) {
+      const response = await fetch('/api/character', {
+          method: "POST",
+          body: JSON.stringify({name, damage, health, background, race, class_id}),
+          headers: {
+              'Content-Type': 'application/json'
+          },
+      });
+      console.log(response)
+      if (response.ok) {
+          document.location.replace('/profile')
+          console.log(name)
+      }
+  }
+};
+console.log("damage")
+
+document
+  .querySelector('.new-character-form')
+  .addEventListener('submit', newFormHandler);
+</script>
