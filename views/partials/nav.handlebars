@@ -1,27 +1,20 @@
-<nav class="navbar navbar-expand-lg" style="border-bottom: 2px outset var(--impred);">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active Home">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link " href="/">Home</a>
                 </li>
                 <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle username dropdown-menu-end" href="" id="navbarDropdown"
-                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        (Username shows here)
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end"
-                     style="padding-top: 0; padding-bottom: 0; background-color: var(--eblack); border: 1px solid var(--culture);"
-                     aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="">Create Character</a>
-                        <a class="dropdown-item" href="">My Characters</a>
+                    <div class="nav-link dropdown-toggle username dropdown-menu-end" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{!-- {{username}} --}}
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/profile/">My Profile</a>
+                        <a class="dropdown-item" href="/">Create Character</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" id="#logout" >Logout</a>
+                            <a id="logout" class="dropdown-item">Logout</a>
+                            <a id="login" class="dropdown-item" href="/login">Log In</a>
                     </div>
                 </li>
             </ul>
