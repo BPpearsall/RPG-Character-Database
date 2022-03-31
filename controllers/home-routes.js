@@ -8,11 +8,12 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try { 
     const characterData = await Character.findAll();
-
     const characters = characterData.map((character) => character.get({ plain: true}));
+    const user = await (await User.findByPk(req.session.user_id)).get({plain: true});
 
     res.render('homepage', {
       characters,
+      user
     });
 
   } catch (err) {
@@ -58,9 +59,8 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/character/:id', async (req, res) => {
   try {
     const characterData = await Character.findByPk(req.params.id, {
-      include: [{ model: Class }, { model: Comment }],
+      include: [{ model: Class }, { model: Comment }, {model: User}],
     });
-
     const character = characterData.get({ plain: true });
 
     res.render('character', {
