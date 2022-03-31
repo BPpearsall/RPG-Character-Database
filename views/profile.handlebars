@@ -5,7 +5,56 @@
 </div>
 
 <div class="row mt-4">
-    <div class="col-md-6">
+  <div class="col-md-6">
+    <h3>Create a New Character:</h3>
 
-    </div>
-</div>
+    <form class="form new-character-form">
+      <div class="form-group">
+        <label for="character-name">Character Name:</label>
+        <input class="form-input" type="text" id="character-name" name="character-name" />
+      </div>
+      
+      <div class="form-group">
+        <label for="character-health">Character Health:</label>
+        <input class="form-input" type="number" id="character-health" name="character-name" />
+      </div>
+
+      <div class="form-group">
+          <label for="character-damage">Character Damage:</label>
+          <input class="form-input" type="number" id="character-damage" name="character-damage" />
+      </div>
+
+      <div class="form-group">
+          <label for="character-race">Character Race:</label>
+          <select class="form-input" name="character-race" id="character-race">
+              <option value="human">Human</option>
+              <option value="dwarf">Dwarf</option>
+              <option value="elf">Elf</option>
+              <option value="undead">Undead</option>
+              <option value="dragonborn">Dragonborn</option>
+              <option value="orc">Orc</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+          <label for="character-class">Character Class:</label>
+          <select class="form-input" name="character-class" id="character-class">
+              <option value="barbarian">Barbarian</option>
+              <option value="ranger">Ranger</option>
+              <option value="fighter">Fighter</option>
+              <option value="paladin">Paladin</option>
+              <option value="rogue">Rogue</option>
+              <option value="wizard">Wizard</option>
+              <option value="warlock">Warlock</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <label for="character-background">Character Background</label>
+        <textarea class="form-input" id="character-background" name="character-background"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
