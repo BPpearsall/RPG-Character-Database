@@ -32,6 +32,7 @@ router.post('/', withAuth, async (req, res) => {
         res.status(200).json(newCharacter);
     } catch (err) {
         res.status(400).json(err);
+        console.log(err)
     }
 });
 

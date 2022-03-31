@@ -1,5 +1,12 @@
 <div class="character-card">
   <div class="character-card-header">
+  {{#if isHuman}}<img style="max-width: 450px; max-height: 300px" src="https://i.imgur.com/xpOvM9R.png">
+  {{else if isOrc}}<img style="max-width: 450px; max-height: 300px" src="https://i.imgur.com/I9lx7g7.png">
+  {{else if isDwarf}}<img style="max-width: 450px; max-height: 300px" src="https://i.ibb.co/Sn3mp0V/Dwarf.png">
+  {{else if isDragonborn}}<img style="max-width: 450px; max-height: 300px" src="https://i.imgur.com/xpOvM9R.png">
+  {{else if isElf}}<img style="max-width: 450px; max-height: 300px" src="https://i.ibb.co/D9g6FVN/Elf.png">
+  {{else if isGnome}}<img style="max-width: 450px; max-height: 300px" src="https://i.ibb.co/7N14p0d/Gnome.png">
+  {{/if}}
     <p class="card-header">{{name}}</p>
     <p class="card-text">{{health}}</p>
     <p class="card-text">{{damage}}</p>
@@ -9,19 +16,3 @@
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Character:</h3>
-
-    <form class="form new-character-form">
-      <div class="form-group">
-        <label for="character-name">Character Name:</label>
-        <input class="form-input" type="text" id="character-name" name="character-name" />
-      </div>
-      <div class="form-group">
-        <label for=""></label>
-      </div>
-    </form>
-  </div>
-
-</div>
