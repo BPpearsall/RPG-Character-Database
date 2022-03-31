@@ -20,4 +20,28 @@ const newFormHandler = async (event) => {
             document.location.replace('/profile')
         }
     }
-}
+};
+
+const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/character/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/character');
+      } else {
+        alert('Failed to delete character');
+      }
+    }
+  };
+  
+  document
+    .querySelector('.new-character-form')
+    .addEventListener('submit', newFormHandler);
+  
+  document
+    .querySelector('.character-list')
+    .addEventListener('click', delButtonHandler);
