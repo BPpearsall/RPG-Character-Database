@@ -53,8 +53,13 @@
 
 .card-title{
     background-color: var(--bred);
-    color: var(--culture);
+    color: var(--shadows);
+    text-shadow: 1px 1px var(--impred);
     
+}
+
+.card-title:link{
+    text-decoration: none;
 }
 
 .card-title:hover{
@@ -69,6 +74,6 @@
     color: var(--eblack);
 }
 
-.card-text:hover{
-    color: var(--culture);
+a:link {
+    text-decoration: none;
 }
