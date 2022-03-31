@@ -60,10 +60,34 @@ router.get('/character/:id', async (req, res) => {
       include: [{ model: Class }, { model: Comment }, {model: User}],
     });
     const character = characterData.get({ plain: true });
-
+ const race = {};
+    //Returns true false for handlebar images.
+    switch (character.race) {
+      case "Human":
+        race.isHuman = true;
+        break;
+      case "Orc":
+        race.isOrc = true;
+        break;
+      case "Dwarf":
+        race.isDwarf = true;
+        break;
+      case "Elf":
+        race.isElf = true;
+        break;
+      case "Gnome":
+        race.isGnome = true;
+        break;
+      case "Dragonborn":
+        race.isDragonborn = true;
+        break;
+      default:
+        console.log("invalid race")
+    };
     res.render('character', {
       ...character,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      ...race
     });
 
   } catch (err) {

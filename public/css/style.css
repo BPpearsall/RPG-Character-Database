@@ -28,6 +28,7 @@
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
+/* Main page styles */
 .navbar {
     background-color: var(--rblack);
     text-shadow: 1px 1px var(--bred);
@@ -44,6 +45,8 @@
 .dropdown-menu a {
     background-color: var(--eblack);
     color:var(--impred);
+    padding: 8px;
+    border-bottom: 1px solid var(--culture);
 }
 
 .dropdown-menu a:hover {
@@ -77,3 +80,5 @@
 a:link {
     text-decoration: none;
 }
+
+/*  */
