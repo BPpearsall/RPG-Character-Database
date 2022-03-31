@@ -1,19 +1,26 @@
 const router = require('express').Router();
-const { User, Character, Comment, Class } = require('../models');
+const {
+  User,
+  Character,
+  Comment,
+  Class
+} = require('../models');
 const withAuth = require('../utils/auth');
 
 // Renders homepage with "all" characters, including comments. If we want to just show
 // characters the include needs removed.
 // **works
 router.get('/', async (req, res) => {
-  try { 
+  try {
     const characterData = await Character.findAll();
-    const characters = characterData.map((character) => character.get({ plain: true}));
+    const characters = characterData.map((character) => character.get({
+      plain: true
+    }));
 
     res.render('homepage', {
       characters,
     });
-  
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -22,13 +29,13 @@ router.get('/', async (req, res) => {
 // If the user is already logged in, redirect the request to another route
 //**works
 router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-      res.redirect('/');
-      return;
-    }
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
 
-    res.render('login');
-  });
+  res.render('login');
+});
 
 // Find the logged in user based on the session ID
 //**handlebar profile page needs created
@@ -36,12 +43,18 @@ router.get('/login', (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
+      attributes: {
+        exclude: ['password']
+      },
       // if we want to show all comments given by this user we need to add model: comments here
-      include: [{ model: Character }],
+      include: [{
+        model: Character
+      }],
     });
 
-    const user = userData.get({ plain: true });
+    const user = userData.get({
+      plain: true
+    });
 
     res.render('profile', {
       ...user,
@@ -57,15 +70,48 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/character/:id', async (req, res) => {
   try {
     const characterData = await Character.findByPk(req.params.id, {
-      include: [{ model: Class }, { model: Comment }, {model: User}],
+      include: [{
+        model: Class
+      }, {
+        model: Comment
+      }, {
+        model: User
+      }],
     });
-    const character = characterData.get({ plain: true });
-
+    const character = characterData.get({
+      plain: true
+    });
+    console.log(character)
+    const race = {};
+    //Returns true false for handlebar images.
+    switch (character.race) {
+      case "Human":
+        race.isHuman = true;
+        break;
+      case "Orc":
+        race.isOrc = true;
+        break;
+      case "Dwarf":
+        race.isDwarf = true;
+        break;
+      case "Elf":
+        race.isElf = true;
+        break;
+      case "Gnome":
+        race.isGnome = true;
+        break;
+      case "Dragonborn":
+        race.isDragonborn = true;
+        break;
+      default:
+        console.log("invalid race")
+    }
     res.render('character', {
       ...character,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      ...race
     });
-
+    console.log(race)
   } catch (err) {
     res.status(400).json(err);
   }

@@ -6,7 +6,7 @@ const characterData = [
         damage: 100,
         health: 100,
         background: 'Lives in a Swamp, friends with donkey, has many layers like an onion.',
-        race: 'Ogre',
+        race: 'Orc',
         class_id: 1,
         user_id: 1,
     },
