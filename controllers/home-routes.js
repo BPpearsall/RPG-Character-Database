@@ -52,7 +52,7 @@ router.get('/create', withAuth, async (req, res) => {
 
     res.render('create', {
       ...user,
-      logged_in: true
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -72,9 +72,9 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('userProfile', {
       ...user,
-      logged_in: true
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -89,8 +89,8 @@ router.get('/character/:id', async (req, res) => {
       include: [{ model: Class }, { model: Comment }, {model: User}],
     });
     const character = characterData.get({ plain: true });
- const race = {};
     //Returns true false for handlebar images.
+    const race = {};
     switch (character.race) {
       case "Human":
         race.isHuman = true;
@@ -115,8 +115,8 @@ router.get('/character/:id', async (req, res) => {
     };
     res.render('character', {
       ...character,
-      logged_in: req.session.logged_in,
-      ...race
+      ...race,
+      logged_in: req.session.logged_in
     });
 
   } catch (err) {
