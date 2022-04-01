@@ -9,7 +9,7 @@
                     <div class="nav-link dropdown-toggle username dropdown-menu-end" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     </div>
                     <div class="dropdown-menu dropdown-menu-end" style="margin: 0; border: 0; padding: 0;" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" style="margin: 0;" href="/profile/">My Profile</a>
+                        <a class="dropdown-item" style="margin: 0;" href="/profile">My Profile</a>
                         <a class="dropdown-item" href="/create">Create Character</a>
                             <a id="login" class="dropdown-item" href="/login">Log In</a>
                             <a id="logout" class="dropdown-item" href="/">Logout</a>
@@ -20,4 +20,19 @@
         </div>
     </nav>
 
-    <script src="./js/logout.js"></script>
+    <script>
+    const logout = async () => {
+    const response = await fetch('/api/user/logout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
+  
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert(response.statusText);
+    }
+  };
+  
+  document.querySelector('#logout').addEventListener('click', logout);
+    </script>
