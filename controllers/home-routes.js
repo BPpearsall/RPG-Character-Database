@@ -30,6 +30,7 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
+//Displays signup.handlebars
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
@@ -37,6 +38,26 @@ router.get('/signup', (req, res) => {
   }
   res.render('signup');
 })
+
+//Displays create.handlebars
+router.get('/create', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      // if we want to show all comments given by this user we need to add model: comments here
+      include: [{ model: Character }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('create', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // Find the logged in user based on the session ID
 //**handlebar profile page needs created
