@@ -1,12 +1,12 @@
 <div class="character-card">
   <div class="character-card-header">
-  {{#if isHuman}}<img style="max-width: 450px; max-height: 300px" src="https://i.imgur.com/xpOvM9R.png">
-  {{else if isOrc}}<img style="max-width: 450px; max-height: 300px" src="https://i.imgur.com/I9lx7g7.png">
-  {{else if isDwarf}}<img style="max-width: 450px; max-height: 300px" src="https://i.ibb.co/Sn3mp0V/Dwarf.png">
-  {{else if isDragonborn}}<img style="max-width: 450px; max-height: 300px" src="https://i.imgur.com/xpOvM9R.png">
-  {{else if isElf}}<img style="max-width: 450px; max-height: 300px" src="https://i.ibb.co/D9g6FVN/Elf.png">
-  {{else if isGnome}}<img style="max-width: 450px; max-height: 300px" src="https://i.ibb.co/7N14p0d/Gnome.png">
-  {{/if}}
+    {{#if isHuman}}<img style="max-width: 450px; max-height: 300px" src="https://i.imgur.com/xpOvM9R.png">
+    {{else if isOrc}}<img style="max-width: 450px; max-height: 300px" src="https://i.imgur.com/I9lx7g7.png">
+    {{else if isDwarf}}<img style="max-width: 450px; max-height: 300px" src="https://i.ibb.co/Sn3mp0V/Dwarf.png">
+    {{else if isDragonborn}}<img style="max-width: 450px; max-height: 300px" src="https://i.imgur.com/xpOvM9R.png">
+    {{else if isElf}}<img style="max-width: 450px; max-height: 300px" src="https://i.ibb.co/D9g6FVN/Elf.png">
+    {{else if isGnome}}<img style="max-width: 450px; max-height: 300px" src="https://i.ibb.co/7N14p0d/Gnome.png">
+    {{/if}}
     <p class="card-header">Character Name: {{name}}</p>
     <p class="card-text">Character Health: {{health}} HP</p>
     <p class="card-text">Character Damage: {{damage}} AP</p>
@@ -17,5 +17,32 @@
   </div>
 </div>
 
+<div class="form-group" style="display: flex; align-content: center;">
+  <label for="add-comment"
+    style="padding: 10px; margin-right: 6px; color: var(--impred); margin-top: 20px">Post Comment:</label>
+  <textarea class="form-input" id="add-comment" name="add-comment"
+    style=" margin-top: 20px;"></textarea>
+</div>
+<div class="form-group">
+  <button type="submit" class="btn btn-primary"
+    style="margin-top: 20px; padding: 3px; color: var(--gray); background-color: var(--carn); border: 1px solid var(--bred);">Post Comment</button>
+</div>
+
+<div class="row mt-4">
+  {{#if comments.length}}
+  <div class="col-md-6 comment-list">
+    <h3>Comments:</h3>
+
+    {{#each comments as |comment|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{user.name}}</h4>
+        <p>{{comment.body}}</p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
 
 
+</div>
