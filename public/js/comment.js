@@ -11,11 +11,10 @@ const newFormHandler = async (event) => {
                 'Content-Type': 'application/json'
             },
         });
-        
+        console.log(response)
+      
+      }
     }
-
-}
-
 document
     .querySelector('.new-comment-form')
     .addEventListener('submit', newFormHandler)
