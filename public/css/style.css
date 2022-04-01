@@ -93,10 +93,10 @@ a:link {
     text-align: center;
     color: var(--impred);
 }
-.signup-input{
+.signup-body form div{
     padding: 10px;
 }
-.signup-input input {
+.signup-body input {
     min-height: 3rem;
     width: 60%;
     max-width: 400px;
