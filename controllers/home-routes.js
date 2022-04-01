@@ -92,7 +92,7 @@ router.get('/character/:id', async (req, res) => {
       default:
         console.log("invalid race")
     };
-    console.log(race)
+  
     res.render('character', {
       ...character,
       logged_in: req.session.logged_in,
