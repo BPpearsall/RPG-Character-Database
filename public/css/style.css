@@ -90,4 +90,66 @@ a:link {
     height: auto;
 }
 
-/*  */
+/* responsive behavior for login screen */
+
+@media screen and (max-width: 767px) {
+    .login-form {
+        margin-left: 200px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .login-form {
+        margin-left: 140px;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .login-form {
+        margin-left: 90px;
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .login-form {
+        margin-left: 45px;
+    }
+}
+
+/* responsive behavior for create character screen */
+
+@media screen and (max-width: 767px) {
+    .new-character-form {
+        margin-left: 200px;
+    }
+}
+
+@media screen and (max-width: 676px) {
+    .new-character-form {
+        margin-left: 150px;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .new-character-form {
+        margin-left: 75px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .new-character-form {
+        margin-left: 35px;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .new-character-form {
+        margin-left: 5px;
+    }
+}
+
+@media screen and (max-width: 377px) {
+    .new-character-form {
+        margin-left: 0px;
+    }
+}
