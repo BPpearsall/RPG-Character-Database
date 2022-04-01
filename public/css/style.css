@@ -89,6 +89,69 @@ a:link {
     width: 55%;
     height: auto;
 }
+.charname{
+color: #b1a7a6;
+font-weight: bold;
+text-align: center;
+} 
+
+.created{
+    color: #b1a7a6;
+}
+
+.pname{
+    color: #b1a7a6;
+    font-style: italic;
+    font-size: 50px;
+    
+}
+
+.createdc{
+    color:#e5383b;
+}
+
+.createdc:hover{
+    color:#d3d3d3
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.charname{
+color: #b1a7a6;
+font-weight: bold;
+text-align: center;
+} 
+
+.created{
+    color: #b1a7a6;
+}
+
+.pname{
+    color: #b1a7a6;
+    font-style: italic;
+    font-size: 50px;
+    
+}
+
+.createdc{
+    color:#e5383b;
+}
+
+.createdc:hover{
+    color:#d3d3d3
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
 
 /* responsive behavior for login screen */
 
