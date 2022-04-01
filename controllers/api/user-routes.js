@@ -20,8 +20,7 @@ router.post('/signup', async (req, res) => {
     
   } catch (err) {
     res.status(400).json(err);
-  }
-    
+  }   
 });
 
 // ** works
