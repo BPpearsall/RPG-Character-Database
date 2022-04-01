@@ -1,4 +1,4 @@
-<div class="character-card">
+<div class="character-card" data-id={{id}}>
   <div class="character-card-header">
   {{#if isHuman}}<img style="max-width: 450px; max-height: 300px" class="center" src="https://i.imgur.com/xpOvM9R.png">
   {{else if isOrc}}<img style="max-width: 450px; max-height: 300px" class="center" src="https://i.imgur.com/I9lx7g7.png">
@@ -14,13 +14,14 @@
     <p class="card-text">Character Class: {{class.name}}</p>
     <p class="card-text">Character Background: {{background}}</p>
     <p class="card-text">Created by: {{user.name}}</p>
+    <p>{{id}}</p>
   </div>
 </div>
 
 
 <form class="form new-comment-form">
   <div class="form-group" style="display: flex; align-content: center;">
-    <label for="add-comment" style="padding: 10px; margin-right: 6px; color: var(--impred); margin-top: 20px">Post
+    <label for="add-comment" style="padding: 10px; margin-right: 6px; color: var(--impred); margin-top: 20px">Add New 
       Comment:</label>
     <textarea class="form-input" id="add-comment" name="add-comment" style=" margin-top: 20px;"></textarea>
   </div>
@@ -52,23 +53,22 @@
 
 <script>
   const newFormHandler = async (event) => {
-    event.preventDefault();
+    
 
     const comment = document.querySelector("#add-comment").value.trim()
-
+    const character_id = document.querySelector(".character-card").getAttribute("data-id")
     if (comment) {
-        const response = await fetch('/api/comment', {
-            method: "POST",
-            body: JSON.stringify({comment}),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        });
-        console.log(response)
-      
-      }
+      const response = await fetch('/api/comment', {
+        method: "POST",
+        body: JSON.stringify({ comment, character_id }),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      });
+
     }
-document
+  }
+  document
     .querySelector('.new-comment-form')
     .addEventListener('submit', newFormHandler)
 </script>
