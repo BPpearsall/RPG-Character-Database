@@ -30,6 +30,14 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
+router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+  res.render('signup');
+})
+
 // Find the logged in user based on the session ID
 //**handlebar profile page needs created
 //**works
