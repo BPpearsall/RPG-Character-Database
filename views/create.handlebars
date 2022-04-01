@@ -1,31 +1,31 @@
 <div class="row">
-    <div class="col-auto">
+    <div class="col-auto" style="color: var(--impred); margin-left: 15px; margin-top: 20px;">
         <h2>{{name}}</h2>
     </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Character:</h3>
+<div class="row mt-4" style="display:flex; justify-content: center; align-content: center; color: var(--impred);">
+  <div class="col-md-6" >
+    <h3 style="margin-left: 10px;">Create a New Character:</h3>
 
     <form class="form new-character-form">
       <div class="form-group">
-        <label for="character-name">Character Name:</label>
+        <label for="character-name" style="padding: 10px; margin-right: 43px; color: var(--impred); margin-top: 10px;">Character Name:</label>
         <input class="form-input" type="text" id="character-name" name="character-name" />
       </div>
 
       <div class="form-group">
-        <label for="character-health">Character Health:</label>
+        <label for="character-health" style="padding: 10px; margin-right: 37px; color: var(--impred); margin-top: 10px;">Character Health:</label>
         <input class="form-input" type="number" id="character-health" name="character-name" />
       </div>
 
       <div class="form-group">
-          <label for="character-damage">Character Damage:</label>
+          <label for="character-damage" style="padding: 10px; margin-right: 28px; color: var(--impred); margin-top: 10px;">Character Damage:</label>
           <input class="form-input" type="number" id="character-damage" name="character-damage" />
       </div>
 
       <div class="form-group">
-          <label for="character-race">Character Race:</label>
+          <label for="character-race" style="padding: 10px; margin-right: 52px; color: var(--impred); margin-top: 10px;">Character Race:</label>
           <select class="form-input" name="character-race" id="character-race">
               <option value="human">Human</option>
               <option value="dwarf">Dwarf</option>
@@ -37,7 +37,7 @@
       </div>
 
       <div class="form-group">
-          <label for="character-class">Character Class:</label>
+          <label for="character-class" style="padding: 10px; margin-right: 50px; color: var(--impred); margin-top: 10px;">Character Class:</label>
           <select class="form-input" name="character-class" id="character-class">
               <option value="1">Angel</option>
               <option value="2">Warrior</option>
@@ -48,12 +48,12 @@
           </select>
       </div>
 
-      <div class="form-group">
-        <label for="character-background">Character Background</label>
-        <textarea class="form-input" id="character-background" name="character-background"></textarea>
+      <div class="form-group" style="display: flex; align-content: center;">
+        <label for="character-background" style="padding: 10px; margin-right: 6px; color: var(--impred); margin-top: 20px">Character Background:</label>
+        <textarea class="form-input" id="character-background" name="character-background" style=" margin-top: 20px;"></textarea>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary" style="margin-top: 20px; padding: 3px; color: var(--gray); background-color: var(--carn); border: 1px solid var(--bred);">Create</button>
       </div>
     </form>
   </div>
@@ -86,7 +86,7 @@
       }
   }
 };
-console.log("damage")
+
 
 document
   .querySelector('.new-character-form')

@@ -6,15 +6,15 @@ const withAuth = require('../utils/auth');
 // characters the include needs removed.
 // **works
 router.get('/', async (req, res) => {
-  try { 
+  try {
     const characterData = await Character.findAll();
-    const characters = characterData.map((character) => character.get({ plain: true}));
+    const characters = characterData.map((character) => character.get({ plain: true }));
 
     res.render('homepage', {
       characters,
       logged_in: req.session.logged_in
     });
-  
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -23,13 +23,13 @@ router.get('/', async (req, res) => {
 // If the user is already logged in, redirect the request to another route
 //**works
 router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-      res.redirect('/');
-      return;
-    }
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
 
-    res.render('login');
-  });
+  res.render('login');
+});
 
 //Displays signup.handlebars
 router.get('/signup', (req, res) => {
@@ -87,7 +87,19 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/character/:id', async (req, res) => {
   try {
     const characterData = await Character.findByPk(req.params.id, {
-      include: [{ model: Class }, { model: Comment }, {model: User}],
+      include: [
+        { model: Class },
+        {
+          model: Comment,
+          include: {
+            model: User,
+            attributes: { exclude: ["password"] }
+          }
+        },
+        {
+          model: User,
+          attributes: { exclude: ["password"] }
+        }],
     });
     const character = characterData.get({ plain: true });
     //Returns true false for handlebar images.
@@ -114,6 +126,7 @@ router.get('/character/:id', async (req, res) => {
       default:
         console.log("invalid race")
     };
+    console.log(character)
     res.render('character', {
       ...character,
       ...race,

@@ -85,6 +85,11 @@ a:link {
     width: 55%;
     height: auto;
 }
+.charname{
+color: #b1a7a6;
+font-weight: bold;
+text-align: center;
+} 
 
 .signup {
     justify-content: center;
@@ -100,4 +105,122 @@ a:link {
     min-height: 3rem;
     width: 60%;
     max-width: 400px;
+}
+
+.created {
+    color: #b1a7a6;
+}
+
+.pname {
+    color: #b1a7a6;
+    font-style: italic;
+    font-size: 50px; 
+}
+
+.createdc {
+    color:#e5383b;
+}
+
+.createdc:hover {
+    color:#d3d3d3
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.charname {
+color: #b1a7a6;
+font-weight: bold;
+text-align: center;
+} 
+
+.created {
+    color: #b1a7a6;
+}
+
+.pname {
+    color: #b1a7a6;
+    font-style: italic;
+    font-size: 50px; 
+}
+
+.createdc {
+    color:#e5383b;
+}
+
+.createdc:hover {
+    color:#d3d3d3
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* responsive behavior for login screen */
+
+@media screen and (max-width: 767px) {
+    .login-form {
+        margin-left: 200px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .login-form {
+        margin-left: 140px;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .login-form {
+        margin-left: 90px;
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .login-form {
+        margin-left: 45px;
+    }
+}
+
+/* responsive behavior for create character screen */
+
+@media screen and (max-width: 767px) {
+    .new-character-form {
+        margin-left: 200px;
+    }
+}
+
+@media screen and (max-width: 676px) {
+    .new-character-form {
+        margin-left: 150px;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .new-character-form {
+        margin-left: 75px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .new-character-form {
+        margin-left: 35px;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .new-character-form {
+        margin-left: 5px;
+    }
+}
+
+@media screen and (max-width: 377px) {
+    .new-character-form {
+        margin-left: 0px;
+    }
 }
