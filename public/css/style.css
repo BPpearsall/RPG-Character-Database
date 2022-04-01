@@ -93,6 +93,7 @@ a:link {
 .charname{
 color: #b1a7a6;
 font-weight: bold;
+text-align: center;
 } 
 
 .created{
@@ -102,16 +103,23 @@ font-weight: bold;
 .pname{
     color: #b1a7a6;
     font-style: italic;
+    font-size: 50px;
+    
 }
 
 .createdc{
     color:#e5383b;
 }
+
 .createdc:hover{
     color:#d3d3d3
 }
 
-.btn-danger{
-    back: #0b090a;
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
 }
+
 /*  */
