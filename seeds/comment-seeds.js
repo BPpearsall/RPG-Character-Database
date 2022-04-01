@@ -7,6 +7,11 @@ const commentData = [
         user_id: 2,
     },
     {
+        body:"Good Test # 2",
+        character_id: 1,
+        user_id: 2,
+    },
+    {
         body: 'Awful luck with the hand.',
         character_id: 2,
         user_id: 3,
