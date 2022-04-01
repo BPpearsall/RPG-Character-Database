@@ -90,4 +90,28 @@ a:link {
     height: auto;
 }
 
+.charname{
+color: #b1a7a6;
+font-weight: bold;
+} 
+
+.created{
+    color: #b1a7a6;
+}
+
+.pname{
+    color: #b1a7a6;
+    font-style: italic;
+}
+
+.createdc{
+    color:#e5383b;
+}
+.createdc:hover{
+    color:#d3d3d3
+}
+
+.btn-danger{
+    back: #0b090a;
+}
 /*  */
