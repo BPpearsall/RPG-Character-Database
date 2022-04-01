@@ -104,8 +104,8 @@ router.get('/character/:id', async (req, res) => {
       case "Elf":
         race.isElf = true;
         break;
-      case "Gnome":
-        race.isGnome = true;
+      case "Undead":
+        race.isUndead = true;
         break;
       case "Dragonborn":
         race.isDragonborn = true;
