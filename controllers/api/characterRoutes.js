@@ -2,24 +2,6 @@ const router = require('express').Router();
 const { Character } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// Get single character by specific id
-//** works
-router.get('/:id', withAuth, async (req, res) => {
-    try {
-        const characterData = await Character.findByPk(req.params.id, {
-            where: {
-                user_id: req.session.user_id,
-            }})
-        const character = characterData.get({ plain: true});
-        res.render('character', {
-            character,
-        })
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err)
-    }
-});
-
 // Posts new character
 //**works
 router.post('/', withAuth, async (req, res) => {
