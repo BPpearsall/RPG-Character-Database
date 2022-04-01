@@ -4,6 +4,8 @@ const withAuth = require('../../utils/auth');
 
 // Posts new character
 //**works
+
+
 router.post('/', withAuth, async (req, res) => {
     try {
         const newCharacter = await Character.create({
