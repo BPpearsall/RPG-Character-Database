@@ -7,11 +7,13 @@ const withAuth = require('../utils/auth');
 // **works
 router.get('/', async (req, res) => {
   try { 
-    const characterData = await Character.findAll();
+    const characterData = await Character.findAll({
+    });
     const characters = characterData.map((character) => character.get({ plain: true}));
 
     res.render('homepage', {
       characters,
+      logged_in: req.session.logged_in
     });
   
   } catch (err) {

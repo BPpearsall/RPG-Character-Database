@@ -3,9 +3,6 @@ const { Character } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Posts new character
-//**works
-
-
 router.post('/', withAuth, async (req, res) => {
     try {
         const newCharacter = await Character.create({
@@ -21,7 +18,6 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // Delete single character by specific id
-//**works
 router.delete('/:id', withAuth, async (req, res) => {
     try {
         const characterData = await Character.destroy({
