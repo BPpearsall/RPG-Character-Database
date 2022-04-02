@@ -29,6 +29,10 @@
 }
 
 /* Main page styles */
+body {
+    background-color: var(--eblack);
+}
+
 .navbar {
     background-color: var(--rblack);
     text-shadow: 1px 1px var(--bred);
@@ -54,21 +58,21 @@
     color:var(--culture);
 }
 
-.card-title{
+.all-character .card-title{
     background-color: var(--bred);
     color: var(--shadows);
 }
 
-.card-title:link{
+.all-character .card-title:link{
     text-decoration: none;
 }
 
-.card-title:hover{
+.all-character .card-title:hover{
     background-color: var(--rred);
     color: var(--gray);
 }
 
-.card-text{
+.all-character .card-text{
     background-color: var(--shadows);
     color: var(--eblack);
     max-width: 100%;
@@ -85,11 +89,6 @@ a:link {
     width: 55%;
     height: auto;
 }
-.charname{
-color: #b1a7a6;
-font-weight: bold;
-text-align: center;
-} 
 
 .signup {
     justify-content: center;
@@ -107,62 +106,60 @@ text-align: center;
     max-width: 400px;
 }
 
-.created {
-    color: #b1a7a6;
+.character {
+    justify-content: center;
 }
 
-.pname {
-    color: #b1a7a6;
-    font-style: italic;
-    font-size: 50px; 
+.character .col {
+    align-self: center;
+    max-width: 500px;
+    width: 50%;
+    margin: 20px;
 }
 
-.createdc {
-    color:#e5383b;
+.character .card {
+    background-color: #b1a7a6;
+    padding: 10px;
 }
 
-.createdc:hover {
-    color:#d3d3d3
+.character-image {
+    align-self: center;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.character-image img{
+    max-width: 450px;
+    max-height: 300px;
 }
 
-.charname {
-color: #b1a7a6;
-font-weight: bold;
-text-align: center;
-} 
-
-.created {
-    color: #b1a7a6;
+.character-info {
+    color: var(--bred);
 }
 
-.pname {
-    color: #b1a7a6;
-    font-style: italic;
-    font-size: 50px; 
+.character-info h2 {
+    text-align: center;
+    color: var(--bred);
 }
 
-.createdc {
-    color:#e5383b;
+.character-info li{
+    text-align: center;
+    background-color: #660708;
+    color: var(--shadows);
 }
 
-.createdc:hover {
-    color:#d3d3d3
+.character-new-comment {
+    color: #ffffff;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.character-new-comment label{
+    align-items: center;
+}
+
+.character-comments {
+    color: #ffffff;
+    margin: 10px;
 }
 
 /* responsive behavior for login screen */
-
 @media screen and (max-width: 767px) {
     .login-form {
         margin-left: 200px;
