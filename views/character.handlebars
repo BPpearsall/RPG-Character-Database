@@ -58,9 +58,9 @@
 </div>
 
 <script>
-  const newFormHandler = async (event) => {
+  const newFormHandler = async () => {
     const comment = document.querySelector("#add-comment").value.trim()
-    const character_id = document.querySelector(".character-card").getAttribute("data-id")
+    const character_id = document.querySelector(".character").getAttribute("data-id")
     if (comment) {
       const response = await fetch('/api/comment', {
         method: "POST",
@@ -68,10 +68,11 @@
         headers: {
           'Content-Type': 'application/json'
         },
+        window.location = this.hrgitef
       });
     }
   }
   document
-    .querySelector('.new-comment-form')
+    .querySelector('.comment-form')
     .addEventListener('submit', newFormHandler)
 </script>
