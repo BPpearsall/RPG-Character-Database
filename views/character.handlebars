@@ -68,6 +68,9 @@
           'Content-Type': 'application/json'
         },
       });
+      if(response.ok) {
+        window.location.reload();
+      }
     }
   }
   document
