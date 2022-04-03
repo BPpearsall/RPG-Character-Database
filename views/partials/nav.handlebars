@@ -7,13 +7,13 @@
             <li class="nav-item dropdown ">
                 <div class="nav-link dropdown-toggle username dropdown-menu-end" id="navbarDropdown" role="button" data-toggle="dropdown"></div>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {{#if logged_in}}
                     <li><a class="dropdown-item" href="/profile">My Profile</a></li>
                     <li><a class="dropdown-item" href="/create">Create Character</a></li>
-                    {{#if logged_in}}
                     <li><a id="logout" class="dropdown-item" href="/">Logout</a></li>
                     {{else}}
-                    <li><a id="login" class="dropdown-item" href="/login">Log In</a></li>
                     <li><a id="signup" class="dropdown-item" href="/signup">Create Account</a></li>
+                    <li><a id="login" class="dropdown-item" href="/login">Log In</a></li>
                     {{/if}}
                 </ul>
             </li>

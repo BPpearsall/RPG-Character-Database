@@ -25,5 +25,5 @@ const newFormHandler = async (event) => {
 
 
 document
-  .querySelector('.new-character-form')
+  .querySelector('.create-form')
   .addEventListener('submit', newFormHandler);

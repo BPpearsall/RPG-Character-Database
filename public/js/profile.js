@@ -15,5 +15,5 @@ const delButtonHandler = async (event) => {
   };
   
   document
-  .querySelector('.character-list')
+  .querySelector('.char-row')
   .addEventListener('click', delButtonHandler);
