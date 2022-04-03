@@ -108,8 +108,8 @@ router.get('/character/:id', async (req, res) => {
       case "Human":
         race.isHuman = true;
         break;
-      case "Orc":
-        race.isOrc = true;
+      case "Ogre":
+        race.isOgre = true;
         break;
       case "Dwarf":
         race.isDwarf = true;
