@@ -108,8 +108,8 @@ router.get('/character/:id', async (req, res) => {
       case "Human":
         race.isHuman = true;
         break;
-      case "Orc":
-        race.isOrc = true;
+      case "Ogre":
+        race.isOgre = true;
         break;
       case "Dwarf":
         race.isDwarf = true;
@@ -120,13 +120,9 @@ router.get('/character/:id', async (req, res) => {
       case "Gnome":
         race.isGnome = true;
         break;
-      case "Dragonborn":
-        race.isDragonborn = true;
-        break;
       default:
         console.log("invalid race")
     };
-    console.log(character)
     res.render('character', {
       ...character,
       ...race,
