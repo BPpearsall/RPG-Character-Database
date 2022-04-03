@@ -1,23 +1,21 @@
-<nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#"   style="background-color: var(--rblack);"></a>
+<nav class="navbar navbar-expand">
     <div id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active Home">
-                <a class="nav-link " style="padding-right: 12px;" href="/">Home</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active home" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item dropdown ">
-                <div class="nav-link dropdown-toggle username dropdown-menu-end" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                </div>
-                <div class="dropdown-menu dropdown-menu-end" style="margin: 0; border: 0; padding: 0;" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" style="margin: 0;" href="/profile">My Profile</a>
-                    <a class="dropdown-item" href="/create">Create Character</a>    
+                <div class="nav-link dropdown-toggle username dropdown-menu-end" id="navbarDropdown" role="button" data-toggle="dropdown"></div>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/profile">My Profile</a></li>
+                    <li><a class="dropdown-item" href="/create">Create Character</a></li>
                     {{#if logged_in}}
-                    <a id="logout" class="dropdown-item" href="/">Logout</a>
+                    <li><a id="logout" class="dropdown-item" href="/">Logout</a></li>
                     {{else}}
-                    <a id="login" class="dropdown-item" href="/login">Log In</a>
-                    <a id="signup" class="dropdown-item" href="/signup">Sign Up</a>
+                    <li><a id="login" class="dropdown-item" href="/login">Log In</a></li>
+                    <li><a id="signup" class="dropdown-item" href="/signup">Create Account</a></li>
                     {{/if}}
-                </div>
+                </ul>
             </li>
         </ul>
     </div>

@@ -1,29 +1,20 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>{{name}}</h2>
+<div class="profile row">
+  <h2>{{name}}</h2>
+  <h3>Created Characters:</h3>
+  <div class="char col">
+    {{#if characters.length}}
+      {{#each characters as |character|}}
+      <div class="char-row row">
+        <div class="char-col col">
+          <h4><a href="/character/{{character.id}}">{{character.name}}</a></h4>
+        </div>
+        <div class="char-col col">
+          <button class="btn btn-sm btn-outline-danger" data-id="{{character.id}}">DELETE</button>
+        </div>
+      </div>
+      {{/each}}
+    {{/if}}
   </div>
 </div>
-
-<div class="row mt-4">
-  {{#if characters.length}}
-  <div class="col-md-6 character-list">
-    <h3>Created Characters:</h3>
-
-    {{#each characters as |character|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/character/{{character.id}}">{{character.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{character.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-
-</div>
-
-
 
 <script src="./js/profile.js"></script>

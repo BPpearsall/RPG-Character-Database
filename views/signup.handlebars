@@ -1,24 +1,25 @@
-<div class="col-md-6" style="display:flex; justify-content: center; align-content: center;">
-  <form class="form signup-form">
-    <div class="form-group">
-      <label for="name-signup"
-        style="padding: 10px; margin-right: 25px; color: var(--impred); margin-top: 20px;">Name:</label>
-      <input class="form-input" type="text" id="name-signup" />
-    </div>
-    <div class="form-group">
-      <label for="email-signup" style="color: var(--impred); padding: 10px; margin-right: 25px;">Email:</label>
-      <input class="form-input" type="text" id="email-signup" />
-    </div>
-    <div class="form-group">
-      <label for="password-signup" style="color: var(--impred); padding: 10px;">Password:</label>
-      <input class="form-input" type="password" id="password-signup" />
-    </div>
-    <div class="form-group">
-      <button class="btn btn-primary"
-        style="margin-top: 20px; padding: 3px; color: var(--gray); background-color: var(--carn); border: 1px solid var(--bred);"
-        type="submit">Signup</button>
-    </div>
-  </form>
+<div class="signup row">
+  <div class="signup-body col">
+    <h2>Create An Account</h2>
+
+    <form class="form">
+      <div class="form-group">
+        <label for="name-signup"></label>
+        <input class="form-input" type="text" id="name-signup" placeholder="Name" />
+      </div>
+      <div class="form-group">
+        <label for="email-signup"></label>
+        <input class="form-input" type="text" id="email-signup" placeholder="Email"/>
+      </div>
+      <div class="form-group">
+        <label for="password-signup"></label>
+        <input class="form-input" type="password" id="password-signup" placeholder="Password" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-danger" type="submit">Create Account</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 <script src="./js/signup.js"></script>
