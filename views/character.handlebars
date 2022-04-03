@@ -27,26 +27,27 @@
   </div>
 </div>
 
-<div class="character-new-comment">
-  <form class="form">
-    <div class="form-group">
-      <label for="add-comment">Add New Comment:</label>
-      <textarea class="form-input" id="add-comment" name="add-comment"></textarea>
-    </div>
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Post Comment</button>
-    </div>
-  </form>
+<div class="character-new-comment row">
+  <div class="col">
+    <h2>Comments</h2>
+    <form class="form">
+      <div class="form-group">
+        <textarea class="form-input" id="add-comment" name="add-comment" placeholder="Add New Comment"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Post Comment</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 <div class="character-comments">
-  <div class="row mt-4">
+  <div class="row">
     {{#if comments.length}}
-      <div class="col-md-6 comment-list">
-        <h3>Comments</h3>
+      <div class="col comment-list">
 
         {{#each comments as |comment|}}
-        <div class="row mb-2">
+        <div class="row">
               <h4>{{user.name}}: </h4>
               <p>{{comment.body}}</p>
         </div>
