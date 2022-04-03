@@ -29,67 +29,222 @@
 }
 
 /* Main page styles */
-.navbar {
-    background-color: var(--rblack);
-    text-shadow: 1px 1px var(--bred);
+body {
+    background-color: var(--eblack);
 }
 
-.nav-link {
+main {
+    margin: 15px;
+}
+
+nav {
+    background-color: var(--eblack);
+    padding-left: 10px;
+}
+
+nav a {
+    text-decoration: none;
     color:var(--impred);
 }
 
-.nav-link:hover {
+nav a:hover {
     color:var(--culture);
 }
 
-.dropdown-menu a {
+nav .home {
+    font-size: 30px;
+}
+
+nav .dropdown {
+    padding-left: 5px;
+}
+
+nav .dropdown-toggle {
+    color: var(--impred);
+    padding-top: 20px;
+}
+
+nav .dropdown-menu {
+    padding: 0;
+}
+
+nav .dropdown-menu a {
     background-color: var(--eblack);
     color:var(--impred);
-    padding: 8px;
     border-bottom: 1px solid var(--culture);
 }
 
-.dropdown-menu a:hover {
-    background-color: var(--eblack);
+nav .dropdown-menu a:hover {
     color:var(--culture);
+    background-color: var(--eblack);
+    opacity: 80%;
 }
 
-.card-title{
+.spellbook {
+    justify-content: center;
+}
+.spellbook img{
+    align-self: center;
+    width: 60%;
+    height: 60%;
+}
+
+.all-character {
+    justify-content: center;
+    margin: 15px;
+}
+
+.all-character .col {
+    justify-content: center;
+    min-width: 30%;
+    max-width: 50%;
+    margin: 10px;
+}
+
+.all-character a {
+    text-decoration: none;
+}
+
+.all-character .card {
+    height: 80px;
+    text-align: center;
+    margin: 0;
+    background-color: var(--shadows);
+}
+
+.all-character .card-title{
     background-color: var(--bred);
     color: var(--shadows);
 }
 
-.card-title:link{
-    text-decoration: none;
-}
-
-.card-title:hover{
+.all-character .card-title:hover{
     background-color: var(--rred);
     color: var(--gray);
 }
 
-.card-text{
-    background-color: var(--shadows);
+.all-character .card-text{
     color: var(--eblack);
-    max-width: 100%;
+    padding: 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-a:link {
-    text-decoration: none;
+.character {
+    justify-content: center;
 }
 
-.spellbook {
-    width: 55%;
-    height: auto;
+.character .col {
+    align-self: center;
+    max-width: 500px;
+    width: 50%;
+    margin: 20px;
 }
-.charname{
-color: #b1a7a6;
-font-weight: bold;
-text-align: center;
-} 
+
+.character .card {
+    background-color: #b1a7a6;
+    padding: 10px;
+}
+
+.character-image {
+    align-self: center;
+}
+
+.character-image img{
+    max-width: 450px;
+    max-height: 300px;
+}
+
+.character-info {
+    color: var(--bred);
+}
+
+.character-info h2 {
+    text-align: center;
+    color: var(--bred);
+}
+
+.character-info li{
+    align-self: center;
+    text-align: center;
+    background-color: #660708;
+    color: var(--shadows);
+    width: 85%;
+}
+
+.character-new-comment {
+    color: #ffffff;
+    padding: 25px;
+}
+
+.character-new-comment textarea {
+    min-height: 100px;
+    max-width: 350px;
+    width: 100%;
+}
+
+.character-comments {
+    color: #ffffff;
+    padding: 30px;
+}
+
+.profile {
+    color: var(--carn);
+    text-align: center;
+    justify-content: center;
+}
+
+.profile h2 {
+    color: var(--impred);
+    margin-bottom: 40px;
+}
+
+.profile .char {
+    max-width: 650px;
+    border: 2px solid #e5383b;
+}
+
+.profile .char-row {
+    justify-content: center;
+    margin: 20px;
+}
+
+.profile .char-col {
+    max-width: 300px;
+}
+.profile .char-col a {
+    text-decoration: underline;
+    color: var(--impred);
+}
+
+.create {
+    padding: 20px;
+}
+
+.create h2 {
+    color: var(--impred);
+}
+.create h3 {
+    color: var(--carn);
+}
+.create .form-group {
+    margin: 10px;
+    max-width: 300px;
+}
+
+.create .form-input{
+    height: 40px;
+    width: 100%;
+    background-color: var(--culture);
+}
+
+#character-background {
+    height: 90px;
+}
+
+.create .form-input::placeholder {
+    color: black;
+}
 
 .signup {
     justify-content: center;
@@ -106,121 +261,29 @@ text-align: center;
     width: 60%;
     max-width: 400px;
 }
-
-.created {
-    color: #b1a7a6;
+.signup input::placeholder {
+    color: black;
 }
 
-.pname {
-    color: #b1a7a6;
-    font-style: italic;
-    font-size: 50px; 
+.login {
+    justify-content: center;
+    color: var(--impred);
+    text-align: center;
 }
 
-.createdc {
-    color:#e5383b;
+.login form{
+    align-self: center;
+    
 }
-
-.createdc:hover {
-    color:#d3d3d3
+.login input {
+    min-height: 50px;
+    max-width: 400px;
+    width: 70%;
+    margin: 10px;
 }
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.login input::placeholder {
+    color: black;
 }
-
-.charname {
-color: #b1a7a6;
-font-weight: bold;
-text-align: center;
-} 
-
-.created {
-    color: #b1a7a6;
-}
-
-.pname {
-    color: #b1a7a6;
-    font-style: italic;
-    font-size: 50px; 
-}
-
-.createdc {
-    color:#e5383b;
-}
-
-.createdc:hover {
-    color:#d3d3d3
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* responsive behavior for login screen */
-
-@media screen and (max-width: 767px) {
-    .login-form {
-        margin-left: 200px;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .login-form {
-        margin-left: 140px;
-    }
-}
-
-@media screen and (max-width: 475px) {
-    .login-form {
-        margin-left: 90px;
-    }
-}
-
-@media screen and (max-width: 395px) {
-    .login-form {
-        margin-left: 45px;
-    }
-}
-
-/* responsive behavior for create character screen */
-
-@media screen and (max-width: 767px) {
-    .new-character-form {
-        margin-left: 200px;
-    }
-}
-
-@media screen and (max-width: 676px) {
-    .new-character-form {
-        margin-left: 150px;
-    }
-}
-
-@media screen and (max-width: 610px) {
-    .new-character-form {
-        margin-left: 75px;
-    }
-}
-
-@media screen and (max-width: 530px) {
-    .new-character-form {
-        margin-left: 35px;
-    }
-}
-
-@media screen and (max-width: 410px) {
-    .new-character-form {
-        margin-left: 5px;
-    }
-}
-
-@media screen and (max-width: 377px) {
-    .new-character-form {
-        margin-left: 0px;
-    }
+.login button {
+    margin-top: 15px;
 }

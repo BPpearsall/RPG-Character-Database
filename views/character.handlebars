@@ -1,60 +1,64 @@
-<div class="character-card" data-id={{id}}>
-  <div class="character-card-header">
-  {{#if isHuman}}<img style="max-width: 450px; max-height: 300px" class="center" src="https://i.imgur.com/xpOvM9R.png">
-  {{else if isOrc}}<img style="max-width: 450px; max-height: 300px" class="center" src="https://i.imgur.com/I9lx7g7.png">
-  {{else if isDwarf}}<img style="max-width: 450px; max-height: 300px" class="center" src="https://i.ibb.co/Sn3mp0V/Dwarf.png">
-  {{else if isDragonborn}}<img style="max-width: 450px; max-height: 300px" class="center" src="https://i.imgur.com/xpOvM9R.png">
-  {{else if isElf}}<img style="max-width: 450px; max-height: 300px" class="center" src="https://i.ibb.co/D9g6FVN/Elf.png">
-  {{else if isGnome}}<img style="max-width: 450px; max-height: 300px" class="center" src="https://i.ibb.co/7N14p0d/Gnome.png">
-  {{/if}}
-    <p class="card-header charname">Character Name: {{name}}</p>
-    <p class="card-text">Character Health: {{health}} HP</p>
-    <p class="card-text">Character Damage: {{damage}} AP</p>
-    <p class="card-text">Character Race: {{race}}</p>
-    <p class="card-text">Character Class: {{class.name}}</p>
-    <p class="card-text">Character Background: {{background}}</p>
-    <p class="card-text">Created by: {{user.name}}</p>
-    <p>{{id}}</p>
+<div class="character row" data-id={{id}}>
+  <div class="col">
+    <div class="card">
+
+      <div class="character-image">
+        {{#if isHuman}}<img  src="https://i.imgur.com/xpOvM9R.png">{{/if}}
+        {{#if isOgre}}<img src="https://i.imgur.com/I9lx7g7.png">{{/if}}
+        {{#if isDwarf}}<img src="https://i.ibb.co/Sn3mp0V/Dwarf.png">{{/if}}
+        {{#if isDragonborn}}<img src="https://i.imgur.com/xpOvM9R.png">{{/if}}
+        {{#if isElf}}<img src="https://i.ibb.co/D9g6FVN/Elf.png">{{/if}}
+        {{#if isGnome}}<img src="https://i.ibb.co/7N14p0d/Gnome.png">{{/if}}
+      </div>
+
+      <div class="character-info">
+        <h2>{{name}}</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><b>Health:</b> {{health}} HP</li>
+          <li class="list-group-item"><b>Damage:</b> {{damage}} AP</li>
+          <li class="list-group-item"><b>Race:</b> {{race}}</li>
+          <li class="list-group-item"><b>Class:</b> {{class.name}}</li>
+          <li class="list-group-item"><b>Background:</b><br>{{background}}</li>
+          <li class="list-group-item"><b>Created by: </b>{{user.name}}</li>
+        </ul>
+      </div>
+
+    </div>
   </div>
 </div>
 
-
-<form class="form new-comment-form">
-  <div class="form-group" style="display: flex; align-content: center;">
-    <label for="add-comment" style="padding: 10px; margin-right: 6px; color: var(--impred); margin-top: 20px">Add New 
-      Comment:</label>
-    <textarea class="form-input" id="add-comment" name="add-comment" style=" margin-top: 20px;"></textarea>
-  </div>
-  <div class="form-group">
-    <button type="submit" class="btn btn-primary"
-      style="margin-top: 20px; padding: 3px; color: var(--gray); background-color: var(--carn); border: 1px solid var(--bred);">Post
-      Comment</button>
-  </div>
-</form>
-
-<div class="row mt-4">
-  {{#if comments.length}}
-  <div class="col-md-6 comment-list">
-    <h3>Comments:</h3>
-
-    {{#each comments as |comment|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>{{user.name}}</h4>
-        <p>{{comment.body}}</p>
+<div class="character-new-comment row">
+  <div class="col">
+    <h2>Comments</h2>
+    <form class="form">
+      <div class="form-group">
+        <textarea class="form-input" id="add-comment" name="add-comment" placeholder="Add New Comment"></textarea>
       </div>
-    </div>
-    {{/each}}
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Post Comment</button>
+      </div>
+    </form>
   </div>
-  {{/if}}
+</div>
 
+<div class="character-comments">
+  <div class="row">
+    {{#if comments.length}}
+      <div class="col comment-list">
 
+        {{#each comments as |comment|}}
+        <div class="row">
+              <h4>{{user.name}}: </h4>
+              <p>{{comment.body}}</p>
+        </div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
 </div>
 
 <script>
   const newFormHandler = async (event) => {
-    
-
     const comment = document.querySelector("#add-comment").value.trim()
     const character_id = document.querySelector(".character-card").getAttribute("data-id")
     if (comment) {
@@ -65,7 +69,6 @@
           'Content-Type': 'application/json'
         },
       });
-
     }
   }
   document
