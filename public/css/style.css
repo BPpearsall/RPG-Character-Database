@@ -37,37 +37,68 @@ main {
     margin: 15px;
 }
 
-.navbar {
-    background-color: var(--rblack);
-    text-shadow: 1px 1px var(--bred);
+nav {
+    background-color: var(--eblack);
+    padding-left: 10px;
 }
 
-.nav-link {
+nav a {
+    text-decoration: none;
     color:var(--impred);
 }
 
-.nav-link:hover {
+nav a:hover {
     color:var(--culture);
 }
 
-.dropdown-menu a {
+nav .home {
+    font-size: 30px;
+}
+
+nav .dropdown {
+    padding-left: 5px;
+}
+
+nav .dropdown-toggle {
+    color: var(--impred);
+    padding-top: 20px;
+}
+
+nav .dropdown-menu {
+    padding: 0;
+}
+
+nav .dropdown-menu a {
     background-color: var(--eblack);
     color:var(--impred);
-    padding: 8px;
     border-bottom: 1px solid var(--culture);
 }
 
-.dropdown-menu a:hover {
-    background-color: var(--eblack);
+nav .dropdown-menu a:hover {
     color:var(--culture);
+    background-color: var(--eblack);
+    opacity: 80%;
+}
+
+.spellbook {
+    justify-content: center;
+}
+.spellbook img{
+    align-self: center;
+    width: 60%;
+    height: 60%;
 }
 
 .all-character {
+    justify-content: center;
     margin: 15px;
 }
 
 .all-character .col {
-    margin: 20px;
+    justify-content: center;
+    min-width: 30%;
+    max-width: 50%;
+    margin: 10px;
 }
 
 .all-character a {
@@ -75,9 +106,10 @@ main {
 }
 
 .all-character .card {
+    height: 80px;
     text-align: center;
-    width: 500px;
     margin: 0;
+    background-color: var(--shadows);
 }
 
 .all-character .card-title{
@@ -91,33 +123,11 @@ main {
 }
 
 .all-character .card-text{
-    background-color: var(--shadows);
     color: var(--eblack);
     padding: 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.spellbook {
-    width: 55%;
-    height: auto;
-}
-
-.signup {
-    justify-content: center;
-}
-.signup-body {
-    text-align: center;
-    color: var(--impred);
-}
-.signup-body form div{
-    padding: 10px;
-}
-.signup-body input {
-    min-height: 3rem;
-    width: 60%;
-    max-width: 400px;
 }
 
 .character {
@@ -168,9 +178,9 @@ main {
 }
 
 .character-new-comment textarea {
-    width: 100%;
-    height: 100px;
+    min-height: 100px;
     max-width: 350px;
+    width: 100%;
 }
 
 .character-comments {
@@ -178,65 +188,102 @@ main {
     padding: 30px;
 }
 
-/* responsive behavior for login screen */
-@media screen and (max-width: 767px) {
-    .login-form {
-        margin-left: 200px;
-    }
+.profile {
+    color: var(--carn);
+    text-align: center;
+    justify-content: center;
 }
 
-@media screen and (max-width: 550px) {
-    .login-form {
-        margin-left: 140px;
-    }
+.profile h2 {
+    color: var(--impred);
+    margin-bottom: 40px;
 }
 
-@media screen and (max-width: 475px) {
-    .login-form {
-        margin-left: 90px;
-    }
+.profile .char {
+    max-width: 650px;
+    border: 2px solid #e5383b;
 }
 
-@media screen and (max-width: 395px) {
-    .login-form {
-        margin-left: 45px;
-    }
+.profile .char-row {
+    justify-content: center;
+    margin: 20px;
 }
 
-/* responsive behavior for create character screen */
-
-@media screen and (max-width: 767px) {
-    .new-character-form {
-        margin-left: 200px;
-    }
+.profile .char-col {
+    max-width: 300px;
+}
+.profile .char-col a {
+    text-decoration: underline;
+    color: var(--impred);
 }
 
-@media screen and (max-width: 676px) {
-    .new-character-form {
-        margin-left: 150px;
-    }
+.create {
+    padding: 20px;
 }
 
-@media screen and (max-width: 610px) {
-    .new-character-form {
-        margin-left: 75px;
-    }
+.create h2 {
+    color: var(--impred);
+}
+.create h3 {
+    color: var(--carn);
+}
+.create .form-group {
+    margin: 10px;
+    max-width: 300px;
 }
 
-@media screen and (max-width: 530px) {
-    .new-character-form {
-        margin-left: 35px;
-    }
+.create .form-input{
+    height: 40px;
+    width: 100%;
+    background-color: var(--culture);
 }
 
-@media screen and (max-width: 410px) {
-    .new-character-form {
-        margin-left: 5px;
-    }
+#character-background {
+    height: 90px;
 }
 
-@media screen and (max-width: 377px) {
-    .new-character-form {
-        margin-left: 0px;
-    }
+.create .form-input::placeholder {
+    color: black;
+}
+
+.signup {
+    justify-content: center;
+}
+.signup-body {
+    text-align: center;
+    color: var(--impred);
+}
+.signup-body form div{
+    padding: 10px;
+}
+.signup-body input {
+    min-height: 3rem;
+    width: 60%;
+    max-width: 400px;
+}
+.signup input::placeholder {
+    color: black;
+}
+
+.login {
+    justify-content: center;
+    color: var(--impred);
+    text-align: center;
+}
+
+.login form{
+    align-self: center;
+    
+}
+.login input {
+    min-height: 50px;
+    max-width: 400px;
+    width: 70%;
+    margin: 10px;
+}
+.login input::placeholder {
+    color: black;
+}
+.login button {
+    margin-top: 15px;
 }
