@@ -5,7 +5,7 @@
 <h2>Description</h2>
 View, create, and comment on your's and other's RPG characters
 
-[Heroku Deployment](https://dashboard.heroku.com/apps/bp-rpg-character-database)
+[Heroku Deployment](https://bp-rpg-character-database.herokuapp.com/)
 
 <h2>Table Of Contents</h2>
 <ul><li><a href="#install">Installation</a></li>
