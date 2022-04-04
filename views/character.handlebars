@@ -57,7 +57,7 @@
 </div>
 
 <script>
-  const newFormHandler = async () => {
+  const newFormHandler = async (event) => {
     const comment = document.querySelector("#add-comment").value.trim()
     const character_id = document.querySelector(".character").getAttribute("data-id")
     if (comment) {
@@ -67,8 +67,9 @@
         headers: {
           'Content-Type': 'application/json'
         },
-        window.location = this.hrgitef
+        
       });
+    
     }
   }
   document
