@@ -120,6 +120,9 @@ router.get('/character/:id', async (req, res) => {
       case "Gnome":
         race.isGnome = true;
         break;
+      case "Undead":
+        race.isUndead = true;
+        break;
       default:
         console.log("invalid race")
     };
